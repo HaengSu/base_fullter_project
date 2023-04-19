@@ -9,14 +9,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget titleSection = Container(
-      padding: const EdgeInsets.all(32),
+      padding: const EdgeInsets.all(16),
       child: Row(
         children: [
           Expanded(child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                padding: const EdgeInsets.only(bottom: 8),
+                padding: const EdgeInsets.only(bottom: 8),  // 특정 부분에 패딩을 넣을때는 .only를 사용함.
                 child: const Text(
                   "TestMessage_1",
                   style: TextStyle(
@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
                 'TestMessage_2',
                 style: TextStyle(
                   fontWeight: FontWeight.w300,
+                  backgroundColor: Colors.blue //error 발생 이유는 Text를 const로 지정하였는데 변수를 넣어기때문에 에러가 발생
                 ),
               )
             ],
@@ -40,6 +41,10 @@ class MyApp extends StatelessWidget {
           Text('22')
         ],
       ),
+    );
+
+    Widget bodySection = Container(
+
     );
 
 
